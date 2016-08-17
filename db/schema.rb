@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817002520) do
+ActiveRecord::Schema.define(version: 20160817091904) do
+
+  create_table "exercises", force: :cascade do |t|
+    t.integer  "duration_in_min"
+    t.text     "workout_type"
+    t.date     "workout_date"
+    t.integer  "calories_burned"
+    t.integer  "calories_eaten"
+    t.integer  "weight"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "exercises", ["user_id"], name: "index_exercises_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

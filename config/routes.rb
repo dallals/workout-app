@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   # devise_for :users
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { registrations: 'registrations' }  
+    # resources :exercise
+  
+
+  resources :users do
+    resources :exercises
+  end
   get 'dashboard/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
