@@ -471,6 +471,7 @@ DEPENDENCIES
   instagram
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-ui-rails
   mini_magick
   pg
   rails (= 4.2.3)

@@ -11,8 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui/datepicker
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require bootstrap-sprockets
+//= require raphael-min
+//= require morris.min
 //= require turbolinks
 //= require_tree .

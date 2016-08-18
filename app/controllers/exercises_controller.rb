@@ -2,10 +2,12 @@ class ExercisesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_exercise, except: [:index, :new, :create]
 	def index
+		@exercises = current_user.exercises.all 
 	end
 
 	def new
 		@exercise = current_user.exercises.new 
+		# @exercise = Exercise.where(user_id: current_user).order(created_at: :desc)
 	end
 
 	def show
