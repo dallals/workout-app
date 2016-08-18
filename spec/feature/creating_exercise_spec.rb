@@ -42,5 +42,5 @@ RSpec.feature "creating exercises" do
     expect(page).to have_content("Workout can't be blank")
     expect(page).to have_content("Workout date can't be blank")
   end
-
+ 
 end

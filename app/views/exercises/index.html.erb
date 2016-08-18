@@ -1,4 +1,4 @@
-<div class="col-md-8 col-md-12">
+<div class="col-md-8 col-md-10">
   <% unless @exercises.empty? %>
   <h1>Listing Exercises</h1>
   
@@ -18,15 +18,15 @@
       <% @exercises.each do |exercise| %>
       <tr>
         <td><%= exercise.duration_in_min %></td>
-        <td><%= truncate(exercise.workout_type, length: 100) %></td>
+        <td><a href="/users/<%= current_user.id %>/exercises/<%= exercise.id%>"> <%= truncate(exercise.workout_type, length: 100) %> </a></td>
         <td><%= exercise.calories_burned %></td>
         <td><%= exercise.calories_eaten %></td>
         <td><%= exercise.weight %></td>
         <td><%= exercise.workout_date %></td>
-        <td><%= link_to "Show", [current_user, exercise] %></td>
-        <td><%= link_to "Edit", [:edit, current_user, exercise] %></td>
+        <td><%= link_to "Show", [current_user, exercise], class: "btn btn-xs btn-info" %></td>
+        <td><%= link_to "Edit", [:edit, current_user, exercise], class: "btn btn-xs btn-success" %></td>
         <td><%= link_to "Destroy", [current_user, exercise], method: :delete, 
-                                    data: { confirm: "Are you sure?" } %></td>
+                                    data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger" %></td>
       </tr>
       <% end %>
     </tbody>
@@ -38,12 +38,15 @@
   </div>
   <br>
   <% end %>
-  <%= link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-primary link" %>
-  <%= content_tag :div, "", id: "chart", data: {workouts: @exercises} %>
-  <br>
-  <strong>Calories Burned</strong>
-  <%= content_tag :div, "", id: "chart2", data: {workouts: @exercises} %>
-  <br>
-  <strong>Weight</strong>
-  <%= content_tag :div, "", id: "chart3", data: {workouts: @exercises} %>
+  
+	<%= link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-primary link" %>
+	<% if @exercises.size > 0 %>  
+	  <%= content_tag :div, "", id: "chart", data: {workouts: @exercises} %>
+	  <br>
+	  <strong>Calories Burned</strong>
+	  <%= content_tag :div, "", id: "chart2", data: {workouts: @exercises} %>
+	  <br>
+	  <strong>Weight</strong>
+	  <%= content_tag :div, "", id: "chart3", data: {workouts: @exercises} %>
+  <% end %>
 </div>

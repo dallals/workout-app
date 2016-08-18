@@ -14,9 +14,9 @@ $(document).ready(function() {
     ykeys: ['duration_in_min'],
     labels: ['Duration (min)'],
     xLabels: "day",
-    xLabelAngle: 60,
+    xLabelAngle: 30,
     xLabelFormat: function (x) {
-      date_string = x.getFullYear() + "/" + parseInt(x.getMonth() + 1) + "/" + x.getDate();
+      date_string = parseInt(x.getMonth() + 1) + "/ " + x.getDate() + " / " + x.getFullYear();
       return date_string; 
     },
     yLabelFormat: function(y) { return y + ' min'; } 
@@ -35,9 +35,9 @@ $(document).ready(function() {
     ykeys: ['calories_burned'],
     labels: ['Calories'],
     xLabels: "day",
-    xLabelAngle: 60,
+    xLabelAngle: 30,
     xLabelFormat: function (x) {
-      date_string = x.getFullYear() + "/" + parseInt(x.getMonth() + 1) + "/" + x.getDate();
+      date_string = parseInt(x.getMonth() + 1) + "/ " + x.getDate() + " / " + x.getFullYear();
       return date_string; 
     },
     yLabelFormat: function(y) { return y + ' Cal'; } 
@@ -57,9 +57,9 @@ $(document).ready(function() {
     ykeys: ['weight'],
     labels: ['Weight'],
     xLabels: "day",
-    xLabelAngle: 60,
+    xLabelAngle: 30,
     xLabelFormat: function (x) {
-      date_string = x.getFullYear() + "/" + parseInt(x.getMonth() + 1) + "/" + x.getDate();
+      date_string = parseInt(x.getMonth() + 1) + "/ " + x.getDate() + " / " + x.getFullYear();
       return date_string; 
     },
     yLabelFormat: function(y) { return y + ' lb'; } 
