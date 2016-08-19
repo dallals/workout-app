@@ -5,18 +5,19 @@ class ExercisesController < ApplicationController
 	def index
 		@exercises = current_user.exercises.all
 		# @exercises = Exercise.where(user_id: current_user) 
+		@friends = current_user.friends
 	end
 
 	def new
 		@exercise = current_user.exercises.new 
 		# @exercise = Exercise.where(user_id: current_user).order(created_at: :desc)
+
 	end
 
 	def show
 	end
 
 	def edit
-
 	end
 
 	def update
@@ -30,10 +31,9 @@ class ExercisesController < ApplicationController
 	end
 
 	def create
-
-
 		@exercise = current_user.exercises.new(exercise_params)
-
+		# @exercise = Exercise.new(exercise_params)  //another way to make a new exercise with user
+		# @exercise.user_id = current_user.id 
 		if @exercise.save
 			flash[:success]= "Exercise has been created"
 			redirect_to [current_user, @exercise]
