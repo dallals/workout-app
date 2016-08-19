@@ -10,6 +10,7 @@
         <th>Duration (min)</th>
         <th>Workout Details</th>
         <th>Activity Date</th>
+        <th>Calories Burned</th>
       </tr>
     </thead>
     
@@ -19,6 +20,7 @@
         <td><%= exercise.duration_in_min %></td>
         <td><%= truncate(exercise.workout_type, length: 100) %></td>
         <td><%= exercise.workout_date %></td>
+        <td><%= exercise.calories_burned %></td>
       </tr>
       <% end %>
     </tbody>

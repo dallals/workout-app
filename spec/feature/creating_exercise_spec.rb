@@ -16,7 +16,7 @@ RSpec.feature "creating exercises" do
     fill_in "Duration", with: 70
     fill_in "Workout Details", with: "Weight lifting"
     fill_in "Calories Burned", with: 70
-    fill_in "Calories Eaten", with: 70 
+    fill_in "Calories Consumed", with: 70 
     fill_in "Current Weight", with: 200
     fill_in "Activity date", with: Date.today
 
@@ -39,7 +39,7 @@ RSpec.feature "creating exercises" do
   	click_button "Create Exercise"
     expect(page).to have_content("Duration in min can't be blank")
     expect(page).to have_content("Duration in min is not a number")
-    expect(page).to have_content("Workout can't be blank")
+    expect(page).to have_content("Workout type can't be blank")
     expect(page).to have_content("Workout date can't be blank")
   end
  

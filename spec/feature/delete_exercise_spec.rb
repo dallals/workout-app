@@ -11,11 +11,11 @@ RSpec.feature "Deleting Exercise" do
 		login_as(@owner)
 	end
 	scenario "delete exercise valid data" do
-		visit "/"
-		click_link "My Lounge"
-		link = "//a[contains(@href, '/users/#{@owner.id}/exercises/#{@owner_exer.id}') and .//text()='Destroy']"
-		# click_link "Destroy"
-		find(:xpath, link).click
+    visit "/"
+    click_link "My Lounge"
+    link = "//a[contains(@href, '/users/#{@owner.id}/exercises/#{@owner_exer.id}') and .//text()='Destroy']"
+    find(:xpath, link).click
+    
 		expect(page).to have_content("Exercise was successfully destroyed.")
 	end
 

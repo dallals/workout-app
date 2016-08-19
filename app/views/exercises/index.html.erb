@@ -1,4 +1,4 @@
-<div class="col-md-8 col-md-8">
+<div class="col-md-8 col-md-9">
   <% unless @exercises.empty? %>
   <h1>Listing Exercises</h1>
   
@@ -40,26 +40,26 @@
   <% end %>
   
 	<%= link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-primary link" %>
-	<% if @exercises.size > 0 %>  
+	<% if @exercises.size > 0 %> 
+    <h4 align="center">Time</h4> 
 	  <%= content_tag :div, "", id: "chart", data: {workouts: @exercises} %>
 	  <br>
-	  <strong>Calories Burned</strong>
+	  <h4 align="center">Calories Burned</h4>
 	  <%= content_tag :div, "", id: "chart2", data: {workouts: @exercises} %>
 	  <br>
-	  <strong>Weight</strong>
+	  <h4 align="center">Weight</h4>
 	  <%= content_tag :div, "", id: "chart3", data: {workouts: @exercises} %>
   <% end %>
 </div>
-<div class="col-md-4 col-xs-12">
-  <h1 class="text-center">My Friends</h1>
+<div class="col-md-3 col-xs-12">
+  <h1 class="text-center"> My Friends</h1>
   <% @friends.each do |friend| %>
     <div class="col-md-offset-3 col-md-6 friend_name">
       <%= link_to friend.full_name, friendship_path(current_user.current_friendship(friend)) %>
     </div>
     <div class="col-md-3">
       <div class="btn-unfollow">
-        <%= link_to "Unfollow", friendship_path(current_user.current_friendship(friend)), method: :delete,
-          data: {confirm: "Are you sure?"}, class: "btn btn-primary link" %>
+        <%= link_to "Unfollow", friendship_path(current_user.current_friendship(friend)), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-xs link" %>
       </div>
     </div>
   <% end %>
