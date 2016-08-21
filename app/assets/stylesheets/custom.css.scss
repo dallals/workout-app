@@ -1,6 +1,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
+.jumbotron {
+
+	/*text-align: center;*/
+	/*background-image: asset-url('volcanopark-03.jpg');*/
+	 /*background-image:url('https://s3-us-west-1.amazonaws.com/codingdojo/3001.JPG');*/
+	background-size: cover;
+
+}
+
+/*.indexname{
+	opacity: 0.5;
+}*/
+
+
+
 body {
 	padding-top: 50px;
 }

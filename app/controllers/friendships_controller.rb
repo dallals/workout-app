@@ -38,7 +38,11 @@ class FriendshipsController < ApplicationController
 
 	def show
 		@friend = Friendship.find(params[:id]).friend
+		# @friend = Friendship.where(user_id: current_user, friend_id: params[:id])
     @exercises = @friend.exercises.all
+    
+    #this will work as well
+    # @exercises = Exercise.where(user_id: @friend)
 	end
 
  private

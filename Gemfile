@@ -41,7 +41,7 @@ gem 'will_paginate', '3.0.7'
 gem 'table_print'
 gem 'instagram'
 gem 'social-share-button', '~> 0.1.6'
-
+gem 'pg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -53,7 +53,7 @@ gem 'web-console', '~> 2.0', group: :development
 # gem 'capistrano-rails', group: :development
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'sqlite3'
+  # gem 'sqlite3'
   gem 'byebug'
 	gem 'rspec-rails', '3.2.3'
 	gem 'guard-rspec', require: false
