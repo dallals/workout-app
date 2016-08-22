@@ -41,7 +41,7 @@ gem 'will_paginate', '3.0.7'
 gem 'table_print'
 gem 'instagram'
 gem 'social-share-button', '~> 0.1.6'
-gem 'pg'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -66,6 +66,7 @@ group :development, :test do
 end
 
 group :test do
+	gem 'sqlite3'
 	gem 'capybara', '2.4.4'
 end
 

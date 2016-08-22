@@ -16,11 +16,13 @@ class User < ActiveRecord::Base
   end
 
   def self.search_by_name(name)
+    # name.downcase!
+    # name.capitalize!
     names_array = name.split(' ')
     if names_array.size == 1
-      where('first_name LIKE ? or last_name LIKE ?', "%#{names_array[0]}%", "%#{names_array[0]}%").order(:first_name)
+      where('first_name iLIKE ? or last_name iLIKE ?', "%#{names_array[0]}%", "%#{names_array[0]}%").order(:first_name)
     else
-      where('first_name LIKE ? or first_name LIKE ? or last_name LIKE ? or last_name LIKE ?', 
+      where('first_name iLIKE ? or first_name iLIKE ? or last_name iLIKE ? or last_name iLIKE ?', 
     "%#{names_array[0]}%", "%#{names_array[1]}%", "%#{names_array[0]}%", "%#{names_array[1]}%").order(:first_name)
     end 
   end
