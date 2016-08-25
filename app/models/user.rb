@@ -16,8 +16,7 @@ class User < ActiveRecord::Base
   end
 
   def self.search_by_name(name)
-    # name.downcase!
-    # name.capitalize!
+    
     names_array = name.split(' ')
     if names_array.size == 1
       where('first_name iLIKE ? or last_name iLIKE ?', "%#{names_array[0]}%", "%#{names_array[0]}%").order(:first_name)
